@@ -4,9 +4,9 @@ import { Elysia } from 'elysia'
 
 const app = new Elysia()
     .get('/yielded-items-become-a-single-string', async function* generator() {
-        yield JSON.stringify({ hello: 'world 1' })
+        yield JSON.stringify({ hello: 'world 1' }) + '\n'
         // if you add sleep(100) here it gets fixed
-        yield JSON.stringify({ hello: 'world 2' })
+        yield JSON.stringify({ hello: 'world 2' }) + '\n'
     })
     .get('/yielded-objects-become-object-object', async function* generator() {
         await sleep(100)
